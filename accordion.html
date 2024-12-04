@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Accordion Example</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="css/uo-nds-style.css">
+        <meta name="robots" content="noindex, nofollow">
+        <script src="js/uo-nds-accordion.js"></script>
+
+        <style>
+            /* demo css */
+            body {
+                background: #eee;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            .accordion-list{
+                width: 700px;
+            }
+
+            .dir-switch{
+                z-index: 9999;
+            }
+        </style>
+    </head>
+
+    <body>
+        <button class="dir-switch" onclick="toggleDirection()">
+            Switch to RTL
+        </button>
+
+        <!-- demo content -->
+        <main>
+            <section style="margin-bottom: 6rem;">
+                <h1 style="font-size: 3.5rem; margin-bottom: 2rem; color: #333; font-weight: 600;">Accordion Examples</h1>
+                <p style="font-size: 1.5rem; line-height: 1.8; margin-bottom: 2rem; color: #444; max-width: 900px;">
+                    Explore different variations and styles of accordions below.
+                </p>
+            </section>
+
+            <section>
+                <h1 style="margin-bottom: 3rem;font-size: large;">Accordion lg</h1>
+                <ul class="accordion-list" >
+                    <li class="accordion-list__item accordion-item accordion-item--lg">
+                        <a href="#" target="_blank" class="accordion-item__header">
+                            <div class="accordion-item__title">Accordion</div>
+                            <div class="accordion-item__arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" color="currentColor" class="">
+                                    <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                </svg>
+                            </div>
+                        </a>
+                        <div class="accordion-item__body" >The accordion component delivers large amounts of content
+                                                    in a small space through progressive disclosure. The user gets key details about the underlying
+                                                    content and can choose to expand that content within the constraints of the accordion. The accordion component delivers large amounts of content
+                                                    in a small space through progressive disclosure. The user gets key details about the underlying
+                                                    content and can choose to expand that content within the constraints of the accordion. The accordion component delivers large amounts of content
+                                                    in a small space through progressive disclosure. The user gets key details about the underlying
+                                                    content and can choose to expand that content within the constraints of the accordion.</div>
+                    </li>
+                    <li class="accordion-list__item accordion-item accordion-item--lg">
+                        <a href="#" target="_blank" class="accordion-item__header">
+                            <div class="accordion-item__title">Accordion</div>
+                            <div class="accordion-item__arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" color="currentColor" class="">
+                                    <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                </svg>
+                            </div>
+                        </a>
+                        <div class="accordion-item__body" >The accordion component delivers large amounts of content
+                                                    in a small space through progressive disclosure. The user gets key details about the underlying
+                                                    content and can choose to expand that content within the constraints of the accordion.</div>
+                    </li>
+                    <li class="accordion-list__item accordion-item accordion-item--lg">
+                        <a href="#" target="_blank" class="accordion-item__header">
+                            <div class="accordion-item__title">Accordion</div>
+                            <div class="accordion-item__arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" color="currentColor" class="">
+                                    <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                </svg>
+                            </div>
+                        </a>
+                        <div class="accordion-item__body">The accordion component delivers large amounts of content in a
+                                                    small space through progressive disclosure. The user gets key details about the underlying
+                                                    content and can choose to expand that content within the constraints of the accordion.</div>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h1 style="margin-bottom: 3rem;font-size: large;">Accordion sm</h1>
+                <ul class="accordion-list" >
+                    <li class="accordion-list__item accordion-item accordion-item--sm">
+                        <a href="#" target="_blank" class="accordion-item__header">
+                            <div class="accordion-item__title">Accordion</div>
+                            <div class="accordion-item__arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" color="currentColor" class="">
+                                    <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                </svg>
+                            </div>
+                        </a>
+                        <div class="accordion-item__body" >The accordion component delivers large amounts of content
+                                                    in a small space through progressive disclosure. The user gets key details about the underlying
+                                                    content and can choose to expand that content within the constraints of the accordion. The accordion component delivers large amounts of content
+                                                    in a small space through progressive disclosure. The user gets key details about the underlying
+                                                    content and can choose to expand that content within the constraints of the accordion. The accordion component delivers large amounts of content
+                                                    in a small space through progressive disclosure. The user gets key details about the underlying
+                                                    content and can choose to expand that content within the constraints of the accordion.</div>
+                    </li>
+                    <li class="accordion-list__item accordion-item accordion-item--lg">
+                        <a href="#" target="_blank" class="accordion-item__header">
+                            <div class="accordion-item__title">Accordion</div>
+                            <div class="accordion-item__arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" color="currentColor" class="">
+                                    <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                </svg>
+                            </div>
+                        </a>
+                        <div class="accordion-item__body" >The accordion component delivers large amounts of content
+                                                    in a small space through progressive disclosure. The user gets key details about the underlying
+                                                    content and can choose to expand that content within the constraints of the accordion.</div>
+                    </li>
+                    <li class="accordion-list__item accordion-item accordion-item--lg">
+                        <a href="#" target="_blank" class="accordion-item__header">
+                            <div class="accordion-item__title">Accordion</div>
+                            <div class="accordion-item__arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" color="currentColor" class="">
+                                    <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                </svg>
+                            </div>
+                        </a>
+                        <div class="accordion-item__body">The accordion component delivers large amounts of content in a
+                                                    small space through progressive disclosure. The user gets key details about the underlying
+                                                    content and can choose to expand that content within the constraints of the accordion.</div>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <script>
+            // Direction toggle
+            function toggleDirection() {
+                const html = document.documentElement;
+                const button = document.querySelector('.dir-switch');
+                const currentDir = html.getAttribute('dir');
+
+                if (currentDir === 'ltr') {
+                    html.setAttribute('dir', 'rtl');
+                    button.textContent = 'Switch to LTR';
+                } else {
+                    html.setAttribute('dir', 'ltr');
+                    button.textContent = 'Switch to RTL';
+                }
+            }
+
+           </script>
+    </body>
+
+</html>

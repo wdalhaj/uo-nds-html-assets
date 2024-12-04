@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons Example</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/uo-nds-style.css">
+    <meta name="robots" content="noindex, nofollow">
+
+    <style>
+        /* demo css */
+        body {
+            background: #eee;
+            padding: 20px;
+        }
+
+        .button-group {
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        h2 {
+            margin: 2rem 0 1rem;
+            color: #333;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            margin: 1.5rem 0 0.75rem;
+            color: #666;
+            font-size: 1.25rem;
+        }
+
+        .demo-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .state-demo {
+            position: relative;
+            padding: 1rem;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .state-label {
+            position: absolute;
+            top: -0.75rem;
+            left: 1rem;
+            background: white;
+            padding: 0 0.5rem;
+            font-size: 0.875rem;
+            color: #666;
+        }
+
+        .size-label {
+            display: block;
+            color: #666;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="dir-switch btn btn--secondary btn--md" onclick="toggleDirection()">
+        Switch to RTL
+    </button>
+
+    <div class="demo-section">
+        <h2>Button Sizes</h2>
+        <div class="button-group">
+            <div>
+                <span class="size-label">Primary Brand</span>
+                <button class="btn btn--primary-brand btn--lg">Large Button</button>
+                <button class="btn btn--primary-brand btn--md">Medium Button</button>
+                <button class="btn btn--primary-brand btn--sm">Small Button</button>
+            </div>
+        </div>
+
+        <h2>Button Variations</h2>
+        
+        <h3>Brand Colors</h3>
+        <div class="button-group">
+            <button class="btn btn--primary-brand btn--md">Primary Brand</button>
+            <button class="btn btn--secondary-brand btn--md">Secondary Brand</button>
+            <button class="btn btn--primary-neutral btn--md">Primary Neutral</button>
+            <button class="btn btn--secondary-outline btn--md">Secondary Outline</button>
+        </div>
+
+        <h3>Standard Colors</h3>
+        <div class="button-group">
+            <button class="btn btn--primary btn--md">Primary</button>
+            <button class="btn btn--secondary btn--md">Secondary</button>
+            <button class="btn btn--subtle btn--md">Subtle</button>
+        </div>
+
+        <h3>Destructive Buttons</h3>
+        <div class="button-group">
+            <button class="btn btn--des-primary btn--md">Destructive Primary</button>
+            <button class="btn btn--des-secondary btn--md">Destructive Secondary</button>
+            <button class="btn btn--des-secondary-outline btn--md">Destructive Outline</button>
+            <button class="btn btn--des-subtle btn--md">Destructive Subtle</button>
+            <button class="btn btn--des-transparent btn--md">Destructive Transparent</button>
+        </div>
+
+        <h3>Icon Buttons</h3>
+        <div class="button-group">
+            <button class="btn btn--primary-brand btn--md">
+                <span class="material-icons">add</span>
+                Icon Before
+            </button>
+            <button class="btn btn--primary-brand btn--md">
+                Icon After
+                <span class="material-icons">arrow_forward</span>
+            </button>
+            <button class="btn btn--icon-only btn--md" aria-label="Add item">
+                <span class="material-icons">add</span>
+            </button>
+            <button class="btn btn--close btn--md" aria-label="Close">
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+
+        <h2>Button States</h2>
+
+        <h3>Interactive States</h3>
+        <div class="button-group">
+            <div class="state-demo">
+                <span class="state-label">Default</span>
+                <button class="btn btn--primary-brand btn--md">Default State</button>
+            </div>
+            <div class="state-demo">
+                <span class="state-label">Hover/Focus</span>
+                <button class="btn btn--primary-brand btn--md" style="filter: brightness(0.9);">Hover/Focus State</button>
+            </div>
+            <div class="state-demo">
+                <span class="state-label">Active</span>
+                <button class="btn btn--primary-brand btn--md" style="filter: brightness(0.8);">Active State</button>
+            </div>
+        </div>
+
+        <h3>Disabled State</h3>
+        <div class="button-group">
+            <button class="btn btn--primary-brand btn--md" disabled>Disabled Primary</button>
+            <button class="btn btn--secondary btn--md" disabled>Disabled Secondary</button>
+        </div>
+
+        <h3>Loading State</h3>
+        <div class="button-group">
+            <button class="btn btn--primary-brand btn--md btn--loading">
+                <span class="material-icons">sync</span>
+                Loading...
+            </button>
+            <button class="btn btn--secondary btn--md btn--loading">
+                <span class="material-icons">sync</span>
+                Processing...
+            </button>
+        </div>
+
+        <h2>Full Width Buttons</h2>
+        <div class="button-group" style="flex-direction: column; width: 100%;">
+            <button class="btn btn--primary-brand btn--md" style="width: 100%;">Full Width Primary</button>
+            <button class="btn btn--secondary btn--md" style="width: 100%;">Full Width Secondary</button>
+        </div>
+    </div>
+
+    <script>
+        // Direction toggle
+        function toggleDirection() {
+            const html = document.documentElement;
+            const currentDir = html.getAttribute('dir');
+            const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
+            html.setAttribute('dir', newDir);
+
+            const button = document.querySelector('.dir-switch');
+            button.textContent = newDir === 'ltr' ? 'Switch to RTL' : 'Switch to LTR';
+        }
+    </script>
+</body>
+
+</html>
