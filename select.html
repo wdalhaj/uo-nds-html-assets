@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Examples</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/uo-nds-style.css">
+    <meta name="robots" content="noindex, nofollow">
+
+    <script src="js/uo-nds-dropdown.js"></script>
+    <style>
+        /* demo css */
+        body {
+            background: #eee;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+
+        .dir-switch {
+            z-index: 9999;
+        }
+
+        .dropdown {
+            max-width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="dir-switch" onclick="toggleDirection()">
+        Switch to RTL
+    </button>
+
+    <!-- demo content -->
+    <main>
+        <section style="margin-bottom: 6rem;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 2rem; color: #333; font-weight: 600;">Select Examples</h1>
+            <p style="font-size: 1.5rem; line-height: 1.8; margin-bottom: 2rem; color: #444; max-width: 900px;">
+                Explore different variations and styles of select/dropdown component below.
+            </p>
+        </section>
+
+        <section>
+            <div id="dropdown1" class="dropdown dropdown--lg">
+                <button class="dropdown__btn" type="button"><span class="dropdown__label"> </span>
+                    <span class="dropdown__label-placeholder ">Option</span>
+                    <span class="dropdown__chevron material-icons">keyboard_arrow_down</span></button>
+                <ul class="dropdown__list">
+                    <li>
+                        <button class="dropdown__option" type="button">
+                            <span class="dropdown__option-label">Option1</span>
+                            <span class="dropdown__option-icon material-icons">check
+                            </span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="dropdown__option" type="button">
+                            <span class="dropdown__option-label">Option 2</span>
+                            <span class="dropdown__option-icon material-icons">check</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="dropdown__option" type="button">
+                            <span class="dropdown__option-label">Option 3</span>
+                            <span class="dropdown__option-icon material-icons">check</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <div id="dropdown2" class="dropdown dropdown--lg">
+                <button class="dropdown__btn" type="button"><span class="dropdown__label"> </span>
+                    <span class="dropdown__label-placeholder ">Option</span>
+                    <span class="dropdown__chevron material-icons">keyboard_arrow_down</span></button>
+                <ul class="dropdown__list">
+                    <li>
+                        <button class="dropdown__option" type="button">
+                            <span class="dropdown__option-label">Option1</span>
+                            <span class="dropdown__option-icon material-icons">check
+                            </span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="dropdown__option" type="button">
+                            <span class="dropdown__option-label">Option 2</span>
+                            <span class="dropdown__option-icon material-icons">check</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="dropdown__option" type="button">
+                            <span class="dropdown__option-label">Option 3</span>
+                            <span class="dropdown__option-icon material-icons">check</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+    </main>
+
+    <script>
+        // Direction toggle
+        function toggleDirection() {
+            const html = document.documentElement;
+            const currentDir = html.getAttribute('dir');
+            const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
+            html.setAttribute('dir', newDir);
+
+            const button = document.querySelector('.dir-switch');
+            button.textContent = newDir === 'ltr' ? 'Switch to RTL' : 'Switch to LTR';
+        }
+
+        // const dropdownBtn = document.querySelector('.dropdown__btn');
+        // dropdownBtn.addEventListener('click', function() {
+        //     this.classList.toggle('open');
+        // });
+    </script>
+
+    <script>
+        // document.addEventListener('DOMContentLoaded', function() {
+        let dropdown1_instance = new UODropdown('#dropdown1');
+        let dropdown2_instance = new UODropdown('#dropdown2');
+        // });
+    </script>
+
+
+    <!-- Initialize dropdowns -->
+    <!-- <script>
+    // Initialize all dropdowns
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+        const instance = new UODropdown(dropdown);
+        
+        // Optional: Listen for changes
+        dropdown.addEventListener('change', (e) => {
+            console.log('Selected:', e.detail);
+        });
+    });
+</script> -->
+
+</body>
+
+</html>

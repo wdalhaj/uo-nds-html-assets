@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Demo</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/uo-nds-style.css">
+    <meta name="robots" content="noindex, nofollow">
+    <script src="js/uo-nds-accordion.js"></script>
+
+    <style>
+        /* demo css */
+        body {
+            background: #eee;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+    
+        .dir-switch {
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <button class="dir-switch" onclick="toggleDirection()">
+        Switch to RTL
+    </button>
+
+    <!-- demo content -->
+    <main>
+        <section style="margin-bottom: 6rem;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 2rem; color: #333; font-weight: 600;">Input Component Demo</h1>
+            <p style="font-size: 1.5rem; line-height: 1.8; margin-bottom: 2rem; color: #444; max-width: 900px;">
+                This demo showcases the various features and styles of the input component.
+            </p>
+        </section>
+
+        <section>
+            <h2>Basic Input</h2>
+            <div style="max-width: 400px;margin-top:20px;">
+                <div class="input input--lg">
+                    <input type="text" class="input__field" placeholder="Enter text" value="">
+                </div>
+            </div>
+        </section>
+
+   
+    </main>
+
+    <script>
+        // Direction toggle
+        function toggleDirection() {
+            const html = document.documentElement;
+            const currentDir = html.getAttribute('dir');
+            const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
+            html.setAttribute('dir', newDir);
+
+            const button = document.querySelector('.dir-switch');
+            button.textContent = newDir === 'ltr' ? 'Switch to RTL' : 'Switch to LTR';
+        }
+
+        // Add focus class on input focus
+        document.querySelectorAll('.input__field').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('focus');
+            });
+            input.addEventListener('blur', function() {
+                this.parentElement.classList.remove('focus');
+            });
+        });
+    </script>
+
+</body>
+</html>
