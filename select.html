@@ -49,11 +49,13 @@
             <div id="dropdown1" class="dropdown dropdown--lg">
                 <button class="dropdown__btn" type="button"><span class="dropdown__label"> </span>
                     <span class="dropdown__label-placeholder ">Option</span>
-                    <span class="dropdown__chevron material-icons">keyboard_arrow_down</span></button>
+                    <span class="dropdown__chevron material-icons">keyboard_arrow_down</span>
+                </button>
                 <ul class="dropdown__list">
                     <li>
                         <button class="dropdown__option" type="button">
-                            <span class="dropdown__option-label">Option1</span>
+                            <span class="dropdown__option-label">Option 1</span>
+                            <span class="dropdown__option-value">option_1</span>
                             <span class="dropdown__option-icon material-icons">check
                             </span>
                         </button>
@@ -61,27 +63,33 @@
                     <li>
                         <button class="dropdown__option" type="button">
                             <span class="dropdown__option-label">Option 2</span>
+                            <span class="dropdown__option-value">option_2</span>
                             <span class="dropdown__option-icon material-icons">check</span>
                         </button>
                     </li>
                     <li>
                         <button class="dropdown__option" type="button">
                             <span class="dropdown__option-label">Option 3</span>
+                            <span class="dropdown__option-value">option_3</span>
                             <span class="dropdown__option-icon material-icons">check</span>
                         </button>
                     </li>
                 </ul>
             </div>
+
+            <span class="text-lg-regular"> value is: <span id="value1">...</span></span>
         </section>
         <section>
             <div id="dropdown2" class="dropdown dropdown--lg">
                 <button class="dropdown__btn" type="button"><span class="dropdown__label"> </span>
                     <span class="dropdown__label-placeholder ">Option</span>
-                    <span class="dropdown__chevron material-icons">keyboard_arrow_down</span></button>
+                    <span class="dropdown__chevron material-icons">keyboard_arrow_down</span>
+                </button>
                 <ul class="dropdown__list">
                     <li>
                         <button class="dropdown__option" type="button">
-                            <span class="dropdown__option-label">Option1</span>
+                            <span class="dropdown__option-label">Option 1</span>
+                            <span class="dropdown__option-value">option_1</span>
                             <span class="dropdown__option-icon material-icons">check
                             </span>
                         </button>
@@ -89,17 +97,21 @@
                     <li>
                         <button class="dropdown__option" type="button">
                             <span class="dropdown__option-label">Option 2</span>
+                            <span class="dropdown__option-value">option_2</span>
                             <span class="dropdown__option-icon material-icons">check</span>
                         </button>
                     </li>
                     <li>
                         <button class="dropdown__option" type="button">
                             <span class="dropdown__option-label">Option 3</span>
+                            <span class="dropdown__option-value">option_3</span>
                             <span class="dropdown__option-icon material-icons">check</span>
                         </button>
                     </li>
                 </ul>
             </div>
+
+            <span class="text-lg-regular"> value is: <span id="value2">...</span></span>
         </section>
 
 
@@ -116,17 +128,28 @@
             const button = document.querySelector('.dir-switch');
             button.textContent = newDir === 'ltr' ? 'Switch to RTL' : 'Switch to LTR';
         }
-
-        // const dropdownBtn = document.querySelector('.dropdown__btn');
-        // dropdownBtn.addEventListener('click', function() {
-        //     this.classList.toggle('open');
-        // });
     </script>
 
     <script>
         // document.addEventListener('DOMContentLoaded', function() {
         let dropdown1_instance = new UODropdown('#dropdown1');
         let dropdown2_instance = new UODropdown('#dropdown2');
+
+        dropdown1.addEventListener('change', (event) => {
+            const {
+                value,
+                text
+            } = event.detail;
+            document.querySelector('#value1').textContent = value;
+        });
+
+        dropdown2.addEventListener('change', (event) => {
+            const {
+                value,
+                text
+            } = event.detail;
+            document.querySelector('#value2').textContent = value;
+        });
         // });
     </script>
 

@@ -48,8 +48,12 @@ class UODropdown {
         this.options.forEach(opt => opt.classList.remove('selected'));
         selectedOption.classList.add('selected');
         this._selectedOption = selectedOption;
-        this._value = selectedOption.dataset.value ||
-            selectedOption.querySelector('.dropdown__option-label').textContent;
+
+        // First try to get value from dropdown__option-value, then fallback to data-value or label
+        const valueElement = selectedOption.querySelector('.dropdown__option-value');
+        this._value = valueElement ? valueElement.textContent :
+            (selectedOption.dataset.value ||
+                selectedOption.querySelector('.dropdown__option-label').textContent);
 
         const selectedText = selectedOption.querySelector('.dropdown__option-label').textContent;
         this.labelPlaceholder.textContent = selectedText;

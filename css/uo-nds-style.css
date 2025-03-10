@@ -3307,6 +3307,10 @@
     color: var(--colors-text-primary)
 }
 
+.dropdown__option-value {
+    display: none;
+}
+
 .dropdown__option-icon {
     opacity: 0
 }
